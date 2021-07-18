@@ -1,0 +1,58 @@
+.header {
+    background-image: url(/Photo/Ballon.jpg);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'Permanent Marker';
+
+/* Design du bouton "Valider" */
+}
+
+#bouton-1, #bouton-2, #bouton-3, #bouton-4, #bouton-5, #bouton-6, #bouton-7 {
+    margin: 5px;
+    padding: 5px;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    transition: 0.5s;
+    background-size: 200%;
+    background-image: linear-gradient(to right, #314755, #26a0da, #314755);
+}
+
+#string-1, #string-2, #string-3, #string-4, #string-5, #string-6, #string-7 {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#bouton-1:hover {
+    background-position: right;
+}
+
+#bouton-2:hover {
+    background-position: right;
+}
+
+#bouton-3:hover {
+    background-position: right;
+}
+
+#bouton-4:hover {
+    background-position: right;
+}
+
+#bouton-5:hover {
+    background-position: right;
+}
+
+#bouton-6:hover {
+    background-position: right;
+}
+
+#bouton-7:hover {
+    background-position: right;
+}
