@@ -172,8 +172,8 @@ function ecrireUneReponse(question, response) {
     /*
 
         for (i = 0; i <= reponse.length - 1; i++) {
-        //     console.log('LOG3: ', reponse[i], question, i + 1)
-        //     // Deuxieme cas avec des conditions moduler dans notre boucle
+        
+        //   Conditions moduler dans notre boucle
         if ((i + 1) === question && response === reponse[i].reponse) {
             //     //     console.log('Good Job !')
             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
@@ -197,7 +197,6 @@ function ecrireUneReponse(question, response) {
     // 
     switch (question) {
         case 1:
-            //      console.log('LOG3: ', reponse[i], question, i + 1)
 
             // Si la response de la fonction est strictement égal à la reponse du tableau (question -1 = Sa commence à partir de 0 pour les questions)
             // et affichant la reponse en rapport avec good reponse + response
@@ -214,13 +213,7 @@ function ecrireUneReponse(question, response) {
             } else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
             break
 
-            default:
-                alert("Mauvaise Réponse !")
-
 
     }
-
-    if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
-            // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
     
 }
