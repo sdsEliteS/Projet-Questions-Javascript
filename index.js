@@ -193,28 +193,27 @@ function ecrireUneReponse(question, response) {
      * Solution 3 - Switch 
      *********************** */
 
-    //     // switch (question) {
-    //     //     case 1:
-    //     //         console.log('LOG3: ', reponse[i], question, i + 1)
-    //     //         if (response === reponse[question - 1].reponse) {
-    //     //             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-    //     //             break
-    //     //         }
-    //     //         else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
-    //     //         break
-    //     //     case 2:
+    switch (question) {
+        case 1:
+            //     //         console.log('LOG3: ', reponse[i], question, i + 1)
+            if (response === reponse[question - 1].reponse) {
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+                break
+            } else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
+            break
+        case 2:
 
-    //     //         break
+            break
 
-    //     //     default:
-    //     //         alert("Mauvaise Réponse !")
+        default:
+            alert("Mauvaise Réponse !")
 
-    //     // }
+    }
 
-    //     // if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
-    //     // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-    // }
+    if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1)).innerHTML = goodReponse + response
+    else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
 }
+
 
 
 
