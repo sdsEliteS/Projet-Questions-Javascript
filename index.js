@@ -124,47 +124,51 @@ function ecrireUneReponse(question, response) {
 
 
     //else {
-   
+
     // // si (la Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
     // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat2) qui sera égal à goodReponse + la réponse donner par l'User
     /*
-     * Début des Conditions
+     * Solution 1 - Conditions
      * ********************* */
 
-    //if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    /*
 
-    //else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
+    if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    //else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
+    else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
 
-    //else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
+    else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
 
-    //else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
+    else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
 
-    //else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
+    else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
 
-    //else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
+    else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
+
+    else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
 
     // console.log('LOG2: ', question)
 
 
     // // si la Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
 
-    //else {
-    // if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-    // if (question === 2) return resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-    // if (question === 3) return resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-    // if (question === 4) return resultat4.innerHTML = "Mauvaise réponse c'était : Portugal !"
-    // if (question === 5) return resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-    // if (question === 6) return resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-    // if (question === 7) return resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
-    //}
+    else {
+        if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+        if (question === 2) return resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
+        if (question === 3) return resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
+        if (question === 4) return resultat4.innerHTML = "Mauvaise réponse c'était : Portugal !"
+        if (question === 5) return resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
+        if (question === 6) return resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
+        if (question === 7) return resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
+    }
 
+    */
 
     /*
-     * Début des Boucles
-     * ********************* */
+     * Solution 2 -  Boucles
+     * *********************** */
 
+    /*
 
         for (i = 0; i <= reponse.length - 1; i++) {
         //     console.log('LOG3: ', reponse[i], question, i + 1)
@@ -178,37 +182,40 @@ function ecrireUneReponse(question, response) {
             document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
         }
 
+    */
 
 
 
 
 
 
+    /* 
+     * Solution 3 - Switch 
+     *********************** */
 
-        //     // // Switch (3)
-        //     // switch (question) {
-        //     //     case 1:
-        //     //         console.log('LOG3: ', reponse[i], question, i + 1)
-        //     //         if (response === reponse[question - 1].reponse) {
-        //     //             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-        //     //             break
-        //     //         }
-        //     //         else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
-        //     //         break
-        //     //     case 2:
+    //     // switch (question) {
+    //     //     case 1:
+    //     //         console.log('LOG3: ', reponse[i], question, i + 1)
+    //     //         if (response === reponse[question - 1].reponse) {
+    //     //             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    //     //             break
+    //     //         }
+    //     //         else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
+    //     //         break
+    //     //     case 2:
 
-        //     //         break
+    //     //         break
 
-        //     //     default:
-        //     //         alert("Mauvaise Réponse !")
+    //     //     default:
+    //     //         alert("Mauvaise Réponse !")
 
-        //     // }
+    //     // }
 
-        //     // if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
-        //     // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-        // }
-    }
+    //     // if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
+    //     // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+    // }
 }
+
 
 
 
