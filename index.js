@@ -125,8 +125,8 @@ function ecrireUneReponse(question, response) {
         // // Premier cas une condition simple a répété par le dev (1)
         // if (question === 1 && response === reponse[0]) resultat1.innerHTML = goodReponse + response
         // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-        // if (question === 2 && response === reponse[1]) resultat1.innerHTML = goodReponse + response
-        // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+        // if (question === 2 && response === reponse[1]) resultat2.innerHTML = goodReponse + response
+        // else resultat2.innerHTML = "Mauvaise réponse c'était :Cristiano Ronaldo !"
 
         console.log('LOG2: ', question)
 
