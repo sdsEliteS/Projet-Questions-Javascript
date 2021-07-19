@@ -120,54 +120,53 @@ let reponse = [{
 
 function ecrireUneReponse(question, response) {
     // console.log('Log: ', question, response)
-    if (!response) alert("Merci d'écire une réponse s'il vous plait !")
-    else {
+    //if (!response) alert("Merci d'écire une réponse s'il vous plait !")
+    //else {
         // // Condition simple a répété par le dev (1)
-        if (question === 1 && response === reponse[question - 1].reponse) return resultat1.innerHTML = goodReponse + response
+        //if (question === 1 && response === reponse[question - 1].reponse) return resultat1.innerHTML = goodReponse + response
 
-        else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
+        //else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
         
-        else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
+        //else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
         
-        else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
+        //else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
         
-        else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
+        //else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
         
-        else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
+        //else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
         
-        else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
+        //else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
         
         // console.log('LOG2: ', question)
-        else {
-            if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-            if (question === 2) return resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-            if (question === 3) return resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-            if (question === 4) return resultat4.innerHTML = "Mauvaise réponse c'était : Portugal !"
-            if (question === 5) return resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-            if (question === 6) return resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-            if (question === 7) return resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
-        }
-
+        //else {
+           // if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+           // if (question === 2) return resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
+           // if (question === 3) return resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
+           // if (question === 4) return resultat4.innerHTML = "Mauvaise réponse c'était : Portugal !"
+           // if (question === 5) return resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
+           // if (question === 6) return resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
+           // if (question === 7) return resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
+        //}
 
 
 
 
 
         // // Boucle pour evité de ce répété dans le code (2)
-        // for (i = 0; i <= reponse.length - 1; i++) {
+        for (i = 0; i <= reponse.length - 1; i++) {
         //     console.log('LOG3: ', reponse[i], question, i + 1)
-        //     // // Deuxieme cas avec des conditions moduler dans notre boucle
-        //     // if ((i + 1) === question && response === reponse[i].reponse) {
+        //     // Deuxieme cas avec des conditions moduler dans notre boucle
+         if ((i + 1) === question && response === reponse[i].reponse) {
         //     //     console.log('Good Job !')
-        //     //     document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-        //     //     break
-        //     // } else {
-        //     //     console.log('Error !')
-        //     //     document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
+        document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+            break
+        } else {
+        //     //    console.log('Error !')
+        document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
         //     // }
 
 
-
+        }
 
 
 
