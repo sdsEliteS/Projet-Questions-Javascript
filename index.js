@@ -125,11 +125,11 @@ function ecrireUneReponse(question, response) {
 
     //else {
 
-    // // si (la Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
+    // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
     // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat2) qui sera égal à goodReponse + la réponse donner par l'User
     /*
      * Solution 1 - Conditions
-     * ********************* */
+     * *********************** */
 
     /*
 
@@ -150,7 +150,7 @@ function ecrireUneReponse(question, response) {
     // console.log('LOG2: ', question)
 
 
-    // // si la Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
+    // // si Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
 
     else {
         if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
@@ -193,6 +193,7 @@ function ecrireUneReponse(question, response) {
      * Solution 3 - Switch 
      *********************** */
 
+    // 
     switch (question) {
         case 1:
             //      console.log('LOG3: ', reponse[i], question, i + 1)
