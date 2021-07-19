@@ -195,10 +195,10 @@ function ecrireUneReponse(question, response) {
 
     switch (question) {
         case 1:
-            //     //         console.log('LOG3: ', reponse[i], question, i + 1)
+            //      console.log('LOG3: ', reponse[i], question, i + 1)
             if (response === reponse[question - 1].reponse) {
                 document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-                break
+            
             } else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
             break
         case 2:
@@ -209,9 +209,7 @@ function ecrireUneReponse(question, response) {
             alert("Mauvaise Réponse !")
 
     }
-
-    if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1)).innerHTML = goodReponse + response
-    else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+    
 }
 
 
