@@ -120,7 +120,8 @@ let reponse = [{
 
 function ecrireUneReponse(question, response) {
     // console.log('Log: ', question, response)
-    if (!response) alert("Merci d'écire une réponse s'il vous plait !")
+    if (!response) return alert("Merci d'écire une réponse s'il vous plait !")
+    
 
 
     //else {
@@ -197,18 +198,29 @@ function ecrireUneReponse(question, response) {
     switch (question) {
         case 1:
             //      console.log('LOG3: ', reponse[i], question, i + 1)
+
+            // Si la response de la fonction est strictement égal à la reponse du tableau (question -1 = Sa commence à partir de 0 pour les questions)
+            // et affichant la reponse en rapport avec good reponse + response
+            // Sinon on affichera que c'est une mauvaise reponse
             if (response === reponse[question - 1].reponse) {
-                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+                return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
             
-            } else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
+            } else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
             break
         case 2:
             if (response === reponse[question - 1].reponse) {
-                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+                return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
             
-            } else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
+            } else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
             break
 
+            default:
+                alert("Mauvaise Réponse !")
+
+
     }
+
+    if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
+            // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
     
 }
