@@ -5,27 +5,28 @@ let gras;
 
 question = document.getElementsByClassName('question-item');
 
-for(var i = 0; i < question.length; i++){
-    question [0].style.color = "purple"
-    question [1].style.color = "blue"
-    question [1].style.color = "bolder"
-    question [2].style.color = "green"
-    question [3].style.color = "brown"
-    question [4].style.color = "orange"
-    question [5].style.color = "fuchsia"
-    question [6].style.color = "red"
+for (var i = 0; i < question.length; i++) {
+    question[0].style.color = "purple"
+    question[1].style.color = "blue"
+    question[1].style.color = "bolder"
+    question[2].style.color = "green"
+    question[3].style.color = "brown"
+    question[4].style.color = "orange"
+    question[5].style.color = "fuchsia"
+    question[6].style.color = "red"
 }
 
 gras = document.getElementsByClassName('gras');
 
-for(var i = 0; i < gras.length; i++){
-    gras [0].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [1].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [2].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [3].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [4].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [5].style.cssText = "background-color: yellow; font-weight:bolder"
-    gras [6].style.cssText = "background-color: yellow; font-weight:bolder"
+// Query seelctor pour assigner le style sur la class "gras"
+for (var i = 0; i < gras.length; i++) {
+    gras[0].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[1].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[2].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[3].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[4].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[5].style.cssText = "background-color: yellow; font-weight:bolder"
+    gras[6].style.cssText = "background-color: yellow; font-weight:bolder"
 }
 
 // Déclaration des Id de la structure HTML en rapport avec le bouton "resultat" //
@@ -74,172 +75,262 @@ console.log(resultat6)
 console.log(resultat7)
 
 // A) Condition if - else pour la mise en marche du bouton //
+let goodReponse = "Bonne Réponse était bien : "
 
-let reponse1 = 'Italie';
-let reponse2 = 'Cristiano Ronaldo';
-let reponse3 = 'Gianluigi Donnarumma';
-let reponse4 = 'Portugal';
-let reponse5 = 'Roberto Mancini';
-let reponse6 = 'Wembley(Angleterre)';
-let reponse7 = 'Suisse';
-console.log(reponse1)
-console.log(reponse2)
-console.log(reponse3)
-console.log(reponse4)
-console.log(reponse5)
-console.log(reponse6)
-console.log(reponse7)
+// let reponse1 = 'Italie';
+// let reponse2 = 'Cristiano Ronaldo';
+// let reponse3 = 'Gianluigi Donnarumma';
+// let reponse4 = 'Portugal';
+// let reponse5 = 'Roberto Mancini';
+// let reponse6 = 'Wembley(Angleterre)';
+// let reponse7 = 'Suisse';
+
+let reponse = [{
+        reponse: 'Italie'
+    },
+    {
+        reponse: 'Cristiano Ronaldo'
+    },
+    {
+        reponse: 'Gianluigi Donnarumma'
+    },
+    {
+        reponse: 'Portugal'
+    },
+    {
+        reponse: 'Roberto Mancini'
+    },
+    {
+        reponse: 'Wembley(Angleterre)'
+    },
+    {
+        reponse: 'Suisse'
+    }
+]
+
+// console.log(reponse[0])
+// console.log(reponse[1])
+// console.log(reponse[2])
+// console.log(reponse[3])
+// console.log(reponse[4])
+// console.log(reponse[5])
+// console.log(reponse[6])
 
 // B) Alerte dans le cas oû la personne clique sans mentionner de réponse //
 
-function ecrireUneReponse1() {
-    if (input1.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input1.value) !=  reponse1 
-        resultat1.innerHTML = " Mauvaise réponse c'était : Italie !"
-    }
+function ecrireUneReponse(question, response) {
+    console.log('Log: ', question, response)
+    if (!response) alert("Merci d'écire une réponse s'il vous plait !")
+    else {
+        // // Premier cas une condition simple a répété par le dev (1)
+        // if (question === 1 && response === reponse[0]) resultat1.innerHTML = goodReponse + response
+        // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+        // if (question === 2 && response === reponse[1]) resultat1.innerHTML = goodReponse + response
+        // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
 
-    preventDefault()
+        console.log('LOG2: ', question)
+
+        // // Boucle pour evité de ce répété dans le code (2)
+        for (i = 0; i <= reponse.length - 1; i++) {
+            console.log('LOG3: ', reponse[i], question, i + 1)
+            // // Deuxieme cas avec des conditions moduler dans notre boucle
+            // if ((i + 1) === question && response === reponse[i].reponse) {
+            //     console.log('Good Job !')
+            //     document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+            //     break
+            // } else {
+            //     console.log('Error !')
+            //     document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
+            // }
+
+
+
+
+            // // Troisieme cas le switch (3)
+            // switch (question) {
+            //     case 1:
+            //         console.log('LOG3: ', reponse[i], question, i + 1)
+            //         if (response === reponse[question - 1].reponse) {
+            //             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+            //             break
+            //         }
+            //         else document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
+            //         break
+            //     case 2:
+
+            //         break
+
+            //     default:
+            //         alert("Mauvaise Réponse !")
+
+            // }
+
+            // if (i === question && response === reponse[i].reponse)(`resultat-` + (i + 1 )).innerHTML = goodReponse + response
+            // else resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
+        }
+    }
 }
 
-bouton1.addEventListener('click', function() {
-    
-    if (String(input1.value) === reponse1) {
-        resultat1.innerHTML = "Bonne réponse ! C'est l'Italie qui s'appelle aussi la Squadra Azzura !"
-    } else {
-        ecrireUneReponse1()
-    
-    } 
-    
-})
 
-function ecrireUneReponse2() {
-    if (input2.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input2.value) !=  reponse2 
-        resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-    }
-        
-    preventDefault()
-}
 
-bouton2.addEventListener('click', function() {
-    
-    if (String(input2.value) === reponse2) {
-        resultat2.innerHTML = "Bonne réponse ! C'est Cristano Ronaldo jouant pour la selection du Portugal : l'Homme au 5 ballons d'or !"
-    } else {
-        ecrireUneReponse2()
-        
-    }
-    
-})
 
-function ecrireUneReponse3() {
-    if (input3.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input3.value) != reponse3
-        resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-    
-    }
 
-    preventDefault()
-}
 
-bouton3.addEventListener('click', function() {
-    
-    if (String(input3.value) === reponse3) {
-        resultat3.innerHTML = "Bonne réponse ! C'est le gardien de la selection italienne Gianluigi Donnarumma élu meilleur joueur du tournoi"
-    } else {
-        ecrireUneReponse3()
-        
-    } 
-    
-})
 
-function ecrireUneReponse4() {
-    if (input4.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input4.value) != reponse4
-        resultat4.innerHTML =  "Mauvaise réponse c'était : Portugal !"
-    
-    }
 
-    preventDefault()
-}
 
-bouton4.addEventListener('click', function() {
-    
-    if (String(input4.value) === reponse4) {
-        resultat4.innerHTML = "Bonne réponse ! C'est le Portugal qui remporte le premier titre de son histoire l'Euro 2016 grâce au but d'Eder contre la France !"
-    } else {
-        ecrireUneReponse4()
-        
-    }
 
-})
 
-function ecrireUneReponse5() {
-    if (input5.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input5.value) != reponse5
-        resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-    
-    }
 
-    preventDefault()
-}
 
-bouton5.addEventListener('click', function() {
-    
-    if (String(input5.value) === reponse5) {
-        resultat5.innerHTML = "Bonne réponse ! C'est Roberto Mancini, ancien entraineur de l'Inter Milan et de Manchester City !"
-    } else {
-        ecrireUneReponse5()
-    
-    }
-   
-})
+// function ecrireUneReponse1() {
+//     if (input1.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input1.value) !=  reponse1 
+//         resultat1.innerHTML = " Mauvaise réponse c'était : Italie !"
+//     }
 
-function ecrireUneReponse6() {
-    if (input6.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input6.value) =! reponse6
-        resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-    
-    }
+//     preventDefault()
+// }
 
-    preventDefault()
-}
+// bouton1.addEventListener('click', function() {
 
-bouton6.addEventListener('click', function() {
-    
-    if (String(input6.value) === reponse6) {
-        resultat6.innerHTML = "Bonne réponse ! C'est le stade de Wembley ce situant en Angleterre !"
-    } else {
-        ecrireUneReponse6()
-        
-    }
-    
-})
+//     if (String(input1.value) === reponse1) {
+//         resultat1.innerHTML = "Bonne réponse ! C'est l'Italie qui s'appelle aussi la Squadra Azzura !"
+//     } else {
+//         ecrireUneReponse1()
 
-function ecrireUneReponse7() {
-    if (input7.value === "") {
-        alert ("Merci d'écire une réponse s'il vous plait !")
-    } else { String(input7.value) =! reponse7
-        resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
-    
-    }
+//     } 
 
-    preventDefault()
-}
+// })
 
-bouton7.addEventListener('click', function() {
-    
-    if (String(input7.value) === reponse7) {
-        resultat7.innerHTML = "Bonne réponse ! C'est la Suisse dans la séance de tirs au but !"
-    } else {
-        ecrireUneReponse7()
-        
-    }
-    
-})
+// function ecrireUneReponse2() {
+//     if (input2.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input2.value) !=  reponse2 
+//         resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
+//     }
+
+//     preventDefault()
+// }
+
+// bouton2.addEventListener('click', function() {
+
+//     if (String(input2.value) === reponse2) {
+//         resultat2.innerHTML = "Bonne réponse ! C'est Cristano Ronaldo jouant pour la selection du Portugal : l'Homme au 5 ballons d'or !"
+//     } else {
+//         ecrireUneReponse2()
+
+//     }
+
+// })
+
+// function ecrireUneReponse3() {
+//     if (input3.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input3.value) != reponse3
+//         resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
+
+//     }
+
+//     preventDefault()
+// }
+
+// bouton3.addEventListener('click', function() {
+
+//     if (String(input3.value) === reponse3) {
+//         resultat3.innerHTML = "Bonne réponse ! C'est le gardien de la selection italienne Gianluigi Donnarumma élu meilleur joueur du tournoi"
+//     } else {
+//         ecrireUneReponse3()
+
+//     } 
+
+// })
+
+// function ecrireUneReponse4() {
+//     if (input4.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input4.value) != reponse4
+//         resultat4.innerHTML =  "Mauvaise réponse c'était : Portugal !"
+
+//     }
+
+//     preventDefault()
+// }
+
+// bouton4.addEventListener('click', function() {
+
+//     if (String(input4.value) === reponse4) {
+//         resultat4.innerHTML = "Bonne réponse ! C'est le Portugal qui remporte le premier titre de son histoire l'Euro 2016 grâce au but d'Eder contre la France !"
+//     } else {
+//         ecrireUneReponse4()
+
+//     }
+
+// })
+
+// function ecrireUneReponse5() {
+//     if (input5.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input5.value) != reponse5
+//         resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
+
+//     }
+
+//     preventDefault()
+// }
+
+// bouton5.addEventListener('click', function() {
+
+//     if (String(input5.value) === reponse5) {
+//         resultat5.innerHTML = "Bonne réponse ! C'est Roberto Mancini, ancien entraineur de l'Inter Milan et de Manchester City !"
+//     } else {
+//         ecrireUneReponse5()
+
+//     }
+
+// })
+
+// function ecrireUneReponse6() {
+//     if (input6.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input6.value) =! reponse6
+//         resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
+
+//     }
+
+//     preventDefault()
+// }
+
+// bouton6.addEventListener('click', function() {
+
+//     if (String(input6.value) === reponse6) {
+//         resultat6.innerHTML = "Bonne réponse ! C'est le stade de Wembley ce situant en Angleterre !"
+//     } else {
+//         ecrireUneReponse6()
+
+//     }
+
+// })
+
+// function ecrireUneReponse7() {
+//     if (input7.value === "") {
+//         alert ("Merci d'écire une réponse s'il vous plait !")
+//     } else { String(input7.value) =! reponse7
+//         resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
+
+//     }
+
+//     preventDefault()
+// }
+
+// bouton7.addEventListener('click', function() {
+
+//     if (String(input7.value) === reponse7) {
+//         resultat7.innerHTML = "Bonne réponse ! C'est la Suisse dans la séance de tirs au but !"
+//     } else {
+//         ecrireUneReponse7()
+
+//     }
+
+// })
