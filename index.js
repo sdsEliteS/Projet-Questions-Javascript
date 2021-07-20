@@ -31,20 +31,6 @@ for (var i = 0; i < gras.length; i++) {
 
 // Déclaration des Id de la structure HTML en rapport avec le bouton "resultat" //
 
-const bouton1 = document.getElementById('bouton-1')
-const bouton2 = document.getElementById('bouton-2')
-const bouton3 = document.getElementById('bouton-3')
-const bouton4 = document.getElementById('bouton-4')
-const bouton5 = document.getElementById('bouton-5')
-const bouton6 = document.getElementById('bouton-6')
-const bouton7 = document.getElementById('bouton-7')
-console.log(bouton1)
-console.log(bouton2)
-console.log(bouton3)
-console.log(bouton4)
-console.log(bouton5)
-console.log(bouton6)
-console.log(bouton7)
 const input1 = document.getElementById('string-1')
 const input2 = document.getElementById('string-2')
 const input3 = document.getElementById('string-3')
@@ -136,17 +122,17 @@ function ecrireUneReponse(question, response) {
 
     if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
+    else if (question === 2 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
+    else if (question === 3 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
+    else if (question === 4 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
+    else if (question === 5 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
+    else if (question === 6 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
-    else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
+    else if (question === 7 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
 
     // console.log('LOG2: ', question)
 
@@ -154,13 +140,13 @@ function ecrireUneReponse(question, response) {
     // // si Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
 
     else {
-        if (question === 1) return resultat1.innerHTML = "Mauvaise réponse c'était : Italie !"
-        if (question === 2) return resultat2.innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-        if (question === 3) return resultat3.innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-        if (question === 4) return resultat4.innerHTML = "Mauvaise réponse c'était : Portugal !"
-        if (question === 5) return resultat5.innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-        if (question === 6) return resultat6.innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-        if (question === 7) return resultat7.innerHTML = "Mauvaise réponse c'était : Suisse !"
+        if (question === 1) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
+        if (question === 2) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
+        if (question === 3) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
+        if (question === 4) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Portugal !"
+        if (question === 5) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
+        if (question === 6) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
+        if (question === 7) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Suisse !"
     }
 
     */
