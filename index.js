@@ -18,7 +18,7 @@ for (var i = 0; i < question.length; i++) {
 
 gras = document.getElementsByClassName('gras');
 
-// Query selector pour assigner le style sur la class "gras"
+// Query selector pour assigner le style sur la class "gras" A FAIRE !!! //
 for (var i = 0; i < gras.length; i++) {
     gras[0].style.cssText = "background-color: yellow; font-weight:bolder"
     gras[1].style.cssText = "background-color: yellow; font-weight:bolder"
@@ -31,20 +31,6 @@ for (var i = 0; i < gras.length; i++) {
 
 // Déclaration des Id de la structure HTML en rapport avec le bouton "resultat" //
 
-const input1 = document.getElementById('string-1')
-const input2 = document.getElementById('string-2')
-const input3 = document.getElementById('string-3')
-const input4 = document.getElementById('string-4')
-const input5 = document.getElementById('string-5')
-const input6 = document.getElementById('string-6')
-const input7 = document.getElementById('string-7')
-console.log(input1)
-console.log(input2)
-console.log(input3)
-console.log(input4)
-console.log(input5)
-console.log(input6)
-console.log(input7)
 const resultat1 = document.getElementById('resultat-1')
 const resultat2 = document.getElementById('resultat-2')
 const resultat3 = document.getElementById('resultat-3')
@@ -60,16 +46,8 @@ console.log(resultat5)
 console.log(resultat6)
 console.log(resultat7)
 
-// A) Condition if - else pour la mise en marche du bouton //
+// Condition if - else pour la mise en marche du bouton //
 let goodReponse = "Bonne Réponse c'était bien : "
-
-//let reponse1 = 'Italie';
-//let reponse2 = 'Cristiano Ronaldo';
-//let reponse3 = 'Gianluigi Donnarumma';
-//let reponse4 = 'Portugal';
-//let reponse5 = 'Roberto Mancini';
-//let reponse6 = 'Wembley(Angleterre)';
-//let reponse7 = 'Suisse';
 
 let reponse = [{
         reponse: 'Italie'
@@ -102,7 +80,7 @@ let reponse = [{
 // console.log(reponse[5])
 // console.log(reponse[6])
 
-// B) Alerte dans le cas oû la personne clique sans mentionner de réponse //
+// Alerte dans le cas oû la personne clique sans mentionner de réponse //
 
 function ecrireUneReponse(question, response) {
     // console.log('Log: ', question, response)
@@ -110,50 +88,49 @@ function ecrireUneReponse(question, response) {
     
 
 
-    //else {
+    
 
-    // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
+    // // si la Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
     // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat2) qui sera égal à goodReponse + la réponse donner par l'User
     /*
-     * Solution 1 - Conditions
+     * Solution 1 - Conditions (Condition if - else pour la mise en marche du bouton ) //
      * *********************** */
 
-    /*
+    
 
-    if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    if (question === 1 && response === reponse[question - 1].reponse) return resultat1.innerHTML = goodReponse + response
 
-    else if (question === 2 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    else if (question === 2 && response === reponse[question - 1].reponse) return resultat2.innerHTML = goodReponse + response
 
-    else if (question === 3 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    else if (question === 3 && response === reponse[question - 1].reponse) return resultat3.innerHTML = goodReponse + response
 
-    else if (question === 4 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    else if (question === 4 && response === reponse[question - 1].reponse) return resultat4.innerHTML = goodReponse + response
 
-    else if (question === 5 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    else if (question === 5 && response === reponse[question - 1].reponse) return resultat5.innerHTML = goodReponse + response
 
-    else if (question === 6 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    else if (question === 6 && response === reponse[question - 1].reponse) return resultat6.innerHTML = goodReponse + response
 
-    else if (question === 7 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    // console.log('LOG2: ', question)
+    else if (question === 7 && response === reponse[question - 1].reponse) return resultat7.innerHTML = goodReponse + response
 
 
-    // // si Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
+
+    // // si la Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1 etc... // 
 
     else {
-        if (question === 1) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
-        if (question === 2) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-        if (question === 3) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-        if (question === 4) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Portugal !"
-        if (question === 5) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-        if (question === 6) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-        if (question === 7) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Suisse !"
+        if (question === 1) return resultat1.innerHTML = "Mauvaise Réponse c'était : Italie !"
+        if (question === 2) return resultat2.innerHTML = "Mauvaise Réponse c'était : Cristiano Ronaldo !"
+        if (question === 3) return resultat3.innerHTML = "Mauvaise Réponse c'était : Gianluigi Donnarumma !"
+        if (question === 4) return resultat4.innerHTML = "Mauvaise Réponse c'était : Portugal !"
+        if (question === 5) return resultat5.innerHTML = "Mauvaise Réponse c'était : Roberto Mancini !"
+        if (question === 6) return resultat6.innerHTML = "Mauvaise Réponse c'était : Wembley(Angleterre) !"
+        if (question === 7) return resultat7.innerHTML = "Mauvaise Réponse c'était : Suisse !"
     }
 
-    */
+    
 
     /*
      * Solution 2 -  Boucles
-     * *********************** */
+     * ********************* */
 
     /*
 
@@ -161,11 +138,11 @@ function ecrireUneReponse(question, response) {
         
         //   Conditions moduler dans notre boucle
         if ((i + 1) === question && response === reponse[i].reponse) {
-            //     //     console.log('Good Job !')
+            
             document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
             break
         } else {
-            //     //    console.log('Error !')
+            
             document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
         }
 
@@ -178,9 +155,10 @@ function ecrireUneReponse(question, response) {
 
     /* 
      * Solution 3 - Switch 
-     *********************** */
+     ********************* */
 
-    // 
+    /*
+
     switch (question) {
         case 1:
 
@@ -201,5 +179,7 @@ function ecrireUneReponse(question, response) {
 
 
     }
+
+    */
     
 }
