@@ -29,14 +29,14 @@ for (var i = 0; i < gras.length; i++) {
     gras[6].style.cssText = "background-color: yellow; font-weight:bolder"
 }
 
-// A) Variable POSITIF 
+// A) Variable POSITIF //
 let goodReponse = "Bonne Réponse c'était bien : "
 
-// B) Variable NEGATIF 
+// B) Variable NEGATIF //
 
 let badReponse = "Mauvaise Réponses c'était : "
 
-// Array des (réponse 0 = Italie = Question 1 etc ...)
+// Array des (réponse 0 = Italie = Question 1 etc ...) //
 let reponse = [{
         reponse: 'Italie' // 0
     },
@@ -60,7 +60,7 @@ let reponse = [{
     }
 ]
 
-// B) Alerte dans le cas oû la personne clique sans mentionner de réponse //
+// Alerte dans le cas oû la personne clique sans mentionner de réponse //
 function ecrireUneReponse(question, response) {
 
     if (!response) return alert("Merci d'écire une réponse s'il vous plait !")
@@ -71,8 +71,8 @@ function ecrireUneReponse(question, response) {
 
 
     
-    // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau [la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
-    // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat1) qui sera égal à goodReponse + la réponse donner par l'User
+    //  Si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau [la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)]) 
+    // Alors on retourne pour mettre fin à la fonction (return) en donnant une valeur html à notre div (resultat1) qui sera égal à goodReponse + la réponse donner par l'User 
 
     /*
 
@@ -96,7 +96,7 @@ function ecrireUneReponse(question, response) {
         }
     
 
-    // // sinon Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
+    // Si la Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response de la question resultat1 par exemple //
 
     
 
@@ -110,7 +110,7 @@ function ecrireUneReponse(question, response) {
     // En commençant de 0 pour la question 1 et jusqu'à temps quelle soit égal au nombre de question total on accrémente.
     // Si i est strictement égal au nombre total de question et si le response est strictement égal au reponse du tableau alors on affiche le resultat sinon on affiche le mauvais.
     // break
-    // 
+    
 
     
     for (i = 0; i <= reponse.length -1; i++){
