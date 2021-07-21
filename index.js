@@ -69,6 +69,8 @@ function ecrireUneReponse(question, response) {
      * Solution 1 - Conditions (Condition if - else pour la mise en marche du bouton ) //
      * *********************** */
 
+    
+
     // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau [la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
     // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat1) qui sera égal à goodReponse + la réponse donner par l'User
 
@@ -130,7 +132,7 @@ function ecrireUneReponse(question, response) {
      * Solution 3 - Switch 
      ********************* */
 
-    /*
+    
 
     // Si la response de la fonction est strictement égal à la reponse du tableau en prenant soin de ressortir l'Id de la structure HTML (question -1 = Sa commence à partir de 0 pour les questions)
     // et affichant la reponse en rapport avec good reponse + response
