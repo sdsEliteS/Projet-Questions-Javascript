@@ -32,7 +32,7 @@ for (var i = 0; i < gras.length; i++) {
 // A) Variable POSITIF 
 let goodReponse = "Bonne Réponse c'était bien : "
 
-// Variable NEGATIF 
+// B) Variable NEGATIF 
 
 let badReponse = "Mauvaise Réponses c'était : "
 
