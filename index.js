@@ -29,10 +29,10 @@ for (var i = 0; i < gras.length; i++) {
     gras[6].style.cssText = "background-color: yellow; font-weight:bolder"
 }
 
-// A) Condition POSITIF if - else pour la mise en marche du bouton //
+// A) Variable POSITIF 
 let goodReponse = "Bonne Réponse c'était bien : "
 
-// condition NEGATIF 
+// Variable NEGATIF 
 
 let badReponse = "Mauvaise Réponses c'était : "
 
@@ -69,8 +69,8 @@ function ecrireUneReponse(question, response) {
      * Solution 1 - Conditions (Condition if - else pour la mise en marche du bouton ) //
      * *********************** */
 
-    
 
+    
     // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau [la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
     // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat1) qui sera égal à goodReponse + la réponse donner par l'User
 
