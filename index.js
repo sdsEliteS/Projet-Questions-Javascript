@@ -116,7 +116,7 @@ function ecrireUneReponse(question, response) {
         if (response === reponse[question - 1].reponse)
         document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
         else { 
-        document.getElementById(`resultat-${ question }`).innerHTML = badReponse +  reponse[i];
+        document.getElementById(`resultat-${ question }`).innerHTML = badReponse +  reponse[question - 1].reponse;
         }
             break
     }
