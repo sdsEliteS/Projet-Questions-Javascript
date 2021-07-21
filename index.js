@@ -29,147 +29,98 @@ for (var i = 0; i < gras.length; i++) {
     gras[6].style.cssText = "background-color: yellow; font-weight:bolder"
 }
 
-// Déclaration des Id de la structure HTML en rapport avec le bouton "resultat" //
-
-const input1 = document.getElementById('string-1')
-const input2 = document.getElementById('string-2')
-const input3 = document.getElementById('string-3')
-const input4 = document.getElementById('string-4')
-const input5 = document.getElementById('string-5')
-const input6 = document.getElementById('string-6')
-const input7 = document.getElementById('string-7')
-console.log(input1)
-console.log(input2)
-console.log(input3)
-console.log(input4)
-console.log(input5)
-console.log(input6)
-console.log(input7)
-const resultat1 = document.getElementById('resultat-1')
-const resultat2 = document.getElementById('resultat-2')
-const resultat3 = document.getElementById('resultat-3')
-const resultat4 = document.getElementById('resultat-4')
-const resultat5 = document.getElementById('resultat-5')
-const resultat6 = document.getElementById('resultat-6')
-const resultat7 = document.getElementById('resultat-7')
-console.log(resultat1)
-console.log(resultat2)
-console.log(resultat3)
-console.log(resultat4)
-console.log(resultat5)
-console.log(resultat6)
-console.log(resultat7)
-
-// A) Condition if - else pour la mise en marche du bouton //
+// A) Condition POSITIF if - else pour la mise en marche du bouton //
 let goodReponse = "Bonne Réponse c'était bien : "
 
-//let reponse1 = 'Italie';
-//let reponse2 = 'Cristiano Ronaldo';
-//let reponse3 = 'Gianluigi Donnarumma';
-//let reponse4 = 'Portugal';
-//let reponse5 = 'Roberto Mancini';
-//let reponse6 = 'Wembley(Angleterre)';
-//let reponse7 = 'Suisse';
+// condition NEGATIF 
 
+let badReponse = "Mauvaise Réponses c'était : "
+
+// Array des (réponse 0 = Italie = Question 1 etc ...)
 let reponse = [{
-        reponse: 'Italie'
+        reponse: 'Italie' // 0
     },
     {
-        reponse: 'Cristiano Ronaldo'
+        reponse: 'Cristiano Ronaldo' // 1
     },
     {
-        reponse: 'Gianluigi Donnarumma'
+        reponse: 'Gianluigi Donnarumma' // 2
     },
     {
-        reponse: 'Portugal'
+        reponse: 'Portugal' // 3
     },
     {
-        reponse: 'Roberto Mancini'
+        reponse: 'Roberto Mancini' // 4
     },
     {
-        reponse: 'Wembley(Angleterre)'
+        reponse: 'Wembley(Angleterre)' // 5
     },
     {
-        reponse: 'Suisse'
+        reponse: 'Suisse' // 6
     }
 ]
 
-// console.log(reponse[0])
-// console.log(reponse[1])
-// console.log(reponse[2])
-// console.log(reponse[3])
-// console.log(reponse[4])
-// console.log(reponse[5])
-// console.log(reponse[6])
-
 // B) Alerte dans le cas oû la personne clique sans mentionner de réponse //
-
 function ecrireUneReponse(question, response) {
-    // console.log('Log: ', question, response)
+
     if (!response) return alert("Merci d'écire une réponse s'il vous plait !")
-    
 
 
-    //else {
-
-    // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau[la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
-    // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat2) qui sera égal à goodReponse + la réponse donner par l'User
     /*
      * Solution 1 - Conditions
      * *********************** */
 
+    // // si Question est strictement égale à 1 et que la réponse proposer par l'user est strictement égale à la réponse du tableau [la question de l'user - 1 (info: la question - 1 est égale à l'index de la réponse dans le tableau)])
+    // // Alors on retourne pour mettre fin à la fonction en donnant une valeur html à notre div (resultat1) qui sera égal à goodReponse + la réponse donner par l'User
+
     /*
 
-    if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        if (question === 1 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 2 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 3 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 4 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 5 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 6 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else if (question === 7 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+    
 
-    else if (question === 2 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
+        else {
+            if (question === 1) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie"
+            if (question === 2) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo"
+            if (question === 3) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma"
+            if (question === 4) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Portugal"
+            if (question === 5) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Roberto Mancini"
+            if (question === 6) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre)"
+            if (question === 7) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Suisse"
+        }
+    
 
-    else if (question === 3 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    else if (question === 4 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    else if (question === 5 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    else if (question === 6 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    else if (question === 7 && response === reponse[question - 1].reponse) return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-
-    // console.log('LOG2: ', question)
-
-
-    // // si Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
-
-    else {
-        if (question === 1) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
-        if (question === 2) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-        if (question === 3) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma !"
-        if (question === 4) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Portugal !"
-        if (question === 5) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Roberto Mancini !"
-        if (question === 6) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre) !"
-        if (question === 7) return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Suisse !"
-    }
+    // // sinon Question est strictement égale à 1 pour la 1er question, alors retourne en affichant la mauvaise response du resultat1
 
     */
+
 
     /*
      * Solution 2 -  Boucles
      * *********************** */
 
-    /*
 
-        for (i = 0; i <= reponse.length - 1; i++) {
-        
-        //   Conditions moduler dans notre boucle
-        if ((i + 1) === question && response === reponse[i].reponse) {
-            //     //     console.log('Good Job !')
-            document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-            break
-        } else {
-            //     //    console.log('Error !')
-            document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : " + reponse[question - 1].reponse
+
+    // En commençant de 0 pour la question 1 et jusqu'à temps quelle soit égal au nombre de question total on accrémente.
+    // Si i est strictement égal au nombre total de question et si le response est strictement égal au reponse du tableau alors on affiche le resultat sinon on affiche le mauvais.
+    // break
+    // 
+
+    
+    for (i = 0; i <= reponse.length -1; i++){
+        console.log('Log FOR: ', i, reponse[i])
+        if (response === reponse[question - 1].reponse)
+        document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+        else { 
+        document.getElementById(`resultat-${ question }`).innerHTML = badReponse +  reponse[i];
         }
-
-    */
+            break
+    }
 
 
 
@@ -180,26 +131,58 @@ function ecrireUneReponse(question, response) {
      * Solution 3 - Switch 
      *********************** */
 
-    // 
+    // Si la response de la fonction est strictement égal à la reponse du tableau en prenant soin de ressortir l'Id de la structure HTML (question -1 = Sa commence à partir de 0 pour les questions)
+    // et affichant la reponse en rapport avec good reponse + response
+    // Sinon on affichera que c'est une mauvaise reponse
+
+    /*
+
     switch (question) {
-        case 1:
 
-            // Si la response de la fonction est strictement égal à la reponse du tableau (question -1 = Sa commence à partir de 0 pour les questions)
-            // et affichant la reponse en rapport avec good reponse + response
-            // Sinon on affichera que c'est une mauvaise reponse
-            if (response === reponse[question - 1].reponse) {
-                return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-            
-            } else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie !"
-            break
-        case 2:
-            if (response === reponse[question - 1].reponse) {
-                return document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response
-            
-            } else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo !"
-            break
+        case (1):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Italie"
+            break;
 
+        case (2):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Cristiano Ronaldo"
+            break;
 
+        case (3):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Gianluigi Donnarumma"
+            break;
+
+        case (4):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Portugal"
+            break;
+
+        case (5):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Roberto Mancini"
+            break;
+
+        case (6):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Wembley(Angleterre)"
+            break;
+
+        case (7):
+            if (response === reponse[question - 1].reponse)
+                document.getElementById(`resultat-${ question }`).innerHTML = goodReponse + response;
+            else return document.getElementById(`resultat-${ question }`).innerHTML = "Mauvaise réponse c'était : Suisse"
+            break;
     }
-    
+
+    */
+
 }
+
